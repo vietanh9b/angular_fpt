@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="infoController">
+        <form action="" name="form">
+
+            <!-- ng-model được sử dụng để buộc dữ liệu 2 chiều từ $scope 
+            vào các điều khiển của form như input, select, textarea,... -->
+            <h1>Test ng-model</h1>
+            <input type="text" ng-model="test">
+            <br>
+            <h2>Đã nhập: {{test}}</h2>
+    
+            <!-- radio -->
+            <h1>Giới tính</h1>
+            <input type="radio" ng-model="gender" value="Nam"> Nam
+            <input type="radio" ng-model="gender" value="Nữ"> Nữ
+            <br>
+            <!-- <button ng-click="submit()">Gửi đi</button> -->
+    
+            <!-- checkbox -->
+            <h1>Danh sách các môn</h1>
+            <br>
+            <input type="checkbox" name="" id="" ng-model="input.list.ALL" ng-checked="input.list.ALL"> ALL
+            <br>
+            <input type="checkbox" name="" id="" ng-model="input.list.A" ng-checked="input.list.ALL"> A
+            <br>
+            <input type="checkbox" name="" id="" ng-model="input.list.B" ng-checked="input.list.ALL"> B
+            <br>
+            <input type="checkbox" name="" id="" ng-model="input.list.C" ng-checked="input.list.ALL"> C
+            <!-- <button ng-click="submit()">Gửi đi</button> -->
+    
+            <!-- select-option -->
+            <h1>Đồ uống lành mạnh</h1>
+            <!-- ng-options -->
+            <select ng-model="selectItem" ng-options="item.name for item in categories">
+            </select>
+            <!-- <select name="" id="" ng-model="selectItem">
+                <option value="{{item.id}}" ng-repeat="item in categories">{{item.name}}</option>
+            </select> -->
+            <!-- <button ng-click="submit()">Gửi đi</button> -->
+    
+            <h1>Đăng nhập</h1>
+            <input type="text" name="account" id="" ng-model="account">
+            <input type="password" name="pass" id="" ng-model="pass">
+            <button ng-click="submit()">Gửi đi</button>
+            <div>{{form.account.$valid}}</div>
+        </form>
+    </div>
+    <script src="./controller/form.js"></script>
+</body>
+</html>

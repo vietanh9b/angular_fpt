@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="infoController">
+        <h1>{{welcome}}</h1>
+        <ul>
+            <li>{{student.id}}</li>
+            <li>{{student.name}}</li>
+            <li>{{student.born}}</li>
+            <li ng-if="date - student.born > 18">đủ tuổi</li>
+        </ul>
+<!-- switch when là switch case nhưng khác cú pháp -->
+        <span ng-switch="student.born">
+            <span ng-switch-when="2003">Đủ tuổi</span>
+            <span ng-switch-when="2009">Chưa đủ tuổi</span>
+        </span>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Mã sinh viên</th>
+                    <th>Tên</th>
+                    <th>Sinh năm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in infos">
+                    <!-- $index là key của mảng -->
+                    <td>{{$index + 1}}</td>
+                    <td>{{x.id}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.born}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script src="./controller/app.js"></script>
+</body>
+</html>

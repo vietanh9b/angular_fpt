@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Custom orange background */
+        .bg-custom-orange {
+            background-color: #FFA500; /* Hex code for orange */
+        }
+    </style>
+    <title>Custom Orange Form</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="bg-custom-orange p-3">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Họ và tên *</label>
+                        <input type="text" class="form-control" id="fullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Địa điểm học *</label>
+                        <input type="text" class="form-control" id="location" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label">Số điện thoại *</label>
+                        <input type="tel" class="form-control" id="phoneNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="major" class="form-label">Ngành học *</label>
+                        <select class="form-select" id="major" required>
+                            <option value="" disabled selected>Chọn ngành học ▼</option>
+                            <option value="IT">Công nghệ thông tin</option>
+                            <option value="Business">Kinh doanh</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="facebookLink" class="form-label">Link Facebook</label>
+                        <input type="url" class="form-control" id="facebookLink">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

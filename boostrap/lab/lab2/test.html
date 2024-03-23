@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chọn một checkbox</title>
+</head>
+<body>
+
+<label><input type="checkbox" name="group" value="option1" onchange="limitCheckboxSelection(this)"> Option 1</label><br>
+<label><input type="checkbox" name="group" value="option2" onchange="limitCheckboxSelection(this)"> Option 2</label><br>
+<label><input type="checkbox" name="group" value="option3" onchange="limitCheckboxSelection(this)"> Option 3</label><br>
+
+<script>
+function limitCheckboxSelection(checkbox) {
+    var checkboxes = document.getElementsByName('group');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] !== checkbox) {
+            checkboxes[i].checked = false;
+        }
+    }
+}
+</script>
+
+</body>
+</html>

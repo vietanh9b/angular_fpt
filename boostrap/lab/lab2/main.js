@@ -1,17 +1,4 @@
-function previewImage(event,img) {
-    var imagePreview = document.getElementById(img);
-    var input = event.target;
 
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            imagePreview.style.display = 'block';
-            imagePreview.src = e.target.result;
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
 
 const submitBtn=document.querySelector('.submit')
 
@@ -29,6 +16,8 @@ const inputEmail=document.querySelector('.email')
 const backFace=document.querySelector('.back-face')
 const frontFace=document.querySelector('.front-face')
 const diploma=document.querySelector('.diploma')
+const checkboxesPerson = document.getElementsByName('person');
+const checkboxesAddress = document.getElementsByName('address');
 
 
 const errorName=document.querySelector('.errorName')
@@ -44,7 +33,23 @@ const errorEmail=document.querySelector('.error_email')
 const errorFrontFace=document.querySelector('.error-front-face')
 const errorBackFace=document.querySelector('.error-back-face')
 const errorDiploma=document.querySelector('.error-diploma')
+const errorAddress = document.querySelector('.error_address');
+const errorPerson = document.querySelector('.error_person');
 
+function previewImage(event,img) {
+    var imagePreview = document.getElementById(img);
+    var input = event.target;
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            imagePreview.style.display = 'block';
+            imagePreview.src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 function checkPhone(input,error){
     const isRegex=/^0\d{9}$/
@@ -137,6 +142,30 @@ function checkFile(input,error){
     }
 }
 
+function updateCheckboxes(checkbox,name) {
+    var checkboxes = document.getElementsByName(name);
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] !== checkbox) {
+            checkboxes[i].checked = false;
+        }
+    }
+}
+
+function validateForm(checkboxes,error) {
+    var isChecked = false;
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            isChecked = true;
+            break;
+        }
+    }
+    if (!isChecked) {
+        error.innerHTML="Bạn phải chọn checkbox"
+        return false; // Ngăn form được gửi đi
+    }
+    return true; // Cho phép form được gửi đi
+}
+
 inputPhoneCad.addEventListener('keyup',()=>{checkPhone(inputPhoneCad,errorPhoneCad)})
 
 inputPhonePar.addEventListener('keyup',()=>{checkPhone(inputPhonePar,errorPhonePar)})
@@ -158,6 +187,8 @@ inputBorn.addEventListener('keyup',()=>{checkDate(inputBorn,errorBorn)})
 inputReleasePlace.addEventListener('keyup',()=>{checkReleasePlace()})
 
 submitBtn.addEventListener('click',()=>{
+    validateForm(checkboxesAddress,errorAddress)
+    validateForm(checkboxesPerson,errorPerson)
     checkFile(diploma,errorDiploma)
     checkFile(backFace,errorBackFace)
     checkFile(frontFace,errorFrontFace)
@@ -174,7 +205,6 @@ submitBtn.addEventListener('click',()=>{
     // document.body.scrollTop = 0;
     // document.documentElement.scrollTop = 0;
 })
-
 
 // console.log(diploma)
 // const receive=document.getElementsByName('person')

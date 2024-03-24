@@ -211,9 +211,9 @@
                                     <label for="fullName" class="form-label">Cơ sở nhập học</label>
                                     <select class="form-select form-control" aria-label="Default select example">
                                         <option selected disabled><span class="text-dark fs-1">Hà Nội</span></option>
-                                        <option value="1">Nam</option>
-                                        <option value="2">Nữ</option>
-                                        <option value="3">Lưỡng giới</option>
+                                        <option value="1">Hải Phòng</option>
+                                        <option value="2">TP Hồ Chí Minh</option>
+                                        <option value="3">Hà Nam</option>
                                     </select>
                                 </div>
                             </div>
@@ -322,34 +322,36 @@
                                 <p>Người nhận</p>
                                 <div class="form-check">
                                     <input name="person" class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckDefault">
+                                        id="flexCheckDefault" onchange="updateCheckboxes(this,'person')">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         <p class="fw-light">Thí sinh</p>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input name="person" class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckChecked">
+                                        id="flexCheckChecked" onchange="updateCheckboxes(this,'person')">
                                     <label class="form-check-label fw-light" for="flexCheckChecked">
                                         <p class="fw-light">Phụ huynh/Người bảo trợ</p>
                                     </label>
                                 </div>
+                                <div class="error_person fs-6 error"></div>
                             </div>
                             <div class="col-md-6">
                                 <p>Địa chỉ nhận</p>
                                 <div class="form-check">
-                                    <input name="address" class="form-check-input" type="checkbox" value=""id="flexCheckDefault">
-                                    <label class="form-check-label fw-light" for="flexCheckDefault">
+                                    <input name="address" class="form-check-input" type="checkbox" value=""id="flexCheck" onchange="updateCheckboxes(this,'address')">
+                                    <label class="form-check-label fw-light" for="flexCheck">
                                         <p class="fw-light">Địa chỉ thường trú</p>  
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input name="address" class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckChecked">
-                                    <label class="form-check-label fw-light" for="flexCheckChecked">
+                                        id="flexChecked" onchange="updateCheckboxes(this,'address')">
+                                    <label class="form-check-label fw-light" for="flexChecked">
                                         <p class="fw-light">Khác</p>  
                                     </label>
                                 </div>
+                                <div class="error_address fs-6 error"></div>
                             </div>
                         </div>
                     </div>
@@ -391,14 +393,15 @@
                         <br>
                         <div class="row">
                             <div class="col-md-6">
-                                <input name="person" class="form-check-input" type="checkbox" value=""id="flexCheckDefault">
+                                <input name="accept" class="form-check-input" type="checkbox" value=""id="flexCheckDefault">
                                 <span class="form-check-label fw-light">Tôi xin cam đoan những lời khai của tôi trên phiếu đăng ký này là đúng sự thật. Nếu sai tôi hoàn toàn chịu trách nhiệm và nhận xử lý theo Quy chế tuyển sinh cao đẳng hiện hành</span>
                                 <br>
-                                <input name="person" class="form-check-input" type="checkbox" value=""id="flexCheckDefault">
+                                <input name="accept" class="form-check-input" type="checkbox" value=""id="flexCheckDefault">
                                 <label class="form-check-label fw-light" for="flexCheckChecked">
                                     Tôi đã đọc kỹ và cam kết tuân thủ Quy định tài chính của nhà trường
                                 </label>
                             </div>
+                            <div class="error-accept fs-6 error"></div>
                         </div>
                         <br>
                         <div class="d-flex justify-content-center">

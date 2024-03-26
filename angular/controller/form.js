@@ -38,6 +38,6 @@ app.controller('infoController',function($scope){
         } else {
             
         }
-        console.log(user)
+        // console.log(user)
     }
 })

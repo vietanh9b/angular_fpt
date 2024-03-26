@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.js"></script>
+</head>
+<body>
+    <div ng-app="appRoute">
+        <header>
+            Đây là phần đầu trang
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#!/trang-chu">Trang chủ</a></li>
+                <li><a href="#!/danh-muc">Danh mục sản phẩm</a></li>
+            </ul>
+        </nav>
+        <main>
+            <!-- Định nghĩa vị trí mà nội dung sẽ render ra -->
+            <div ng-view></div>
+        </main>
+        <footer>Đây là chân trang</footer>
+    </div>
+    <script src="route/route.js"></script>
+</body>
+</html>

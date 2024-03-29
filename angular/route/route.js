@@ -1,8 +1,11 @@
 angular.module('appRoute',['ngRoute']).config(function($routeProvider){
-    $routeProvider.when('/trang-chu',{ // định nghĩa tên router
-        templateUrl: 'views/trang-chu.html'
+    $routeProvider.when('/product/list',{ // định nghĩa tên router
+        templateUrl: 'views/list.html',
+        controller:ListController
     })
-    .when('/danh-muc',{ // định nghĩa tên router
-        templateUrl: 'views/danh-muc.html'
+    .when('/product/detail/:id',{ // định nghĩa tên router
+        templateUrl: 'views/detail.html',
+        controller:DetailController
+        
     })
 })

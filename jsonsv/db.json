@@ -1,19 +1,24 @@
 {
-    "product":[
-        {
-            "id":1,
-            "name":"anhlv1",
-            "price":1000000   
-        },
-        {
-            "id":2,
-            "name":"anhlv2",
-            "price":2000000   
-        },
-        {
-            "id":3,
-            "name":"anhlv3",
-            "price":3000000   
-        }
-    ]
+  "product": [
+    {
+      "id": "1",
+      "name": "anhlv1",
+      "price": 1000000
+    },
+    {
+      "id": "2",
+      "name": "anhlv2",
+      "price": 1000000
+    },
+    {
+      "id": "3",
+      "name": "anhlv1",
+      "price": 1000000
+    },
+    {
+      "id": "7d18",
+      "name": "Lê Việt Anh",
+      "price": "300000"
+    }
+  ]
 }

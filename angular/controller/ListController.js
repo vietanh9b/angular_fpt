@@ -14,4 +14,16 @@ window.ListController=function($scope,$http,$location){
     $scope.onDetail= function(id){
         $location.path(`/product/detail/${id}`)
     }
+
+    $scope.onDelete=function(deleteId){
+        let confirm=window.confirm('Bạn có muốn xóa không?')
+        if(confirm){
+            $http.delete(`${apiUrl}/${deleteId}`).then(res=>{
+                console.log(res);
+                if(res.status==200){
+                    $scope.getProducts()
+                }
+            })
+        }
+    }
 }

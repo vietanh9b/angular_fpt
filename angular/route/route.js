@@ -11,4 +11,8 @@ angular.module('appRoute',['ngRoute']).config(function($routeProvider){
         templateUrl: 'views/add.html',
         controller:AddController
     })
+    .when('/product/edit/:id',{ // định nghĩa tên router
+        templateUrl: 'views/edit.html',
+        controller:EditController
+    })
 })

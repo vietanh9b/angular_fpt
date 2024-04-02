@@ -1,0 +1,11 @@
+<form action="">
+    <label for="name">Name</label>
+    <input type="text" id="name" ng-model="inputValue.name">
+    <span ng-show="checkData.name==true" style="color: red;">Vui lòng nhập tên</span>
+
+    <label for="price">Price</label>
+    <input type="text" id="price" ng-model="inputValue.price">
+    <span ng-show="checkData.price==true" style="color: red;">Vui lòng nhập giá</span>
+
+    <button ng-click="onEditForm()">Thêm</button>
+</form>

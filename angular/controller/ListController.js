@@ -26,4 +26,7 @@ window.ListController=function($scope,$http,$location){
             })
         }
     }
+    $scope.onEdit=function(id){
+        $location.path(`product/edit/${id}`)
+    }
 }

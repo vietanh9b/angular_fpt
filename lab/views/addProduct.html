@@ -1,0 +1,21 @@
+<h2>Thêm sản phẩm</h2>
+<form action="" class="">
+    <label for="name">Name</label>
+    <input type="text" id="name" ng-model="inputValue.name" class="form-control">
+    <span ng-show="checkData.name==true" style="color: red;">Vui lòng nhập tên</span>
+    <br>
+
+    <label for="price">Price</label>
+    <input type="text" id="price" ng-model="inputValue.price" class="form-control">
+    <span ng-show="checkData.price==true" style="color: red;">Vui lòng nhập giá</span>
+    <br>
+    <label for="title">Tiêu đề</label>
+    <input type="text" id="title" ng-model="inputValue.title" class="form-control">
+    <span ng-show="checkData.title==true" style="color: red;">Vui lòng tiêu đề</span>
+    <br>
+    <label for="desc">desc</label>
+    <input type="text" id="desc" ng-model="inputValue.desc" class="form-control">
+    <span ng-show="checkData.desc==true" style="color: red;">Vui lòng mô tả</span>
+    <br>
+    <button class="btn bg-primary text-light" ng-click="onSubmit()">Thêm</button>
+</form>

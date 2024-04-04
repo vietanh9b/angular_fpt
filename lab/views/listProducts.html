@@ -1,0 +1,32 @@
+<div class="heading-content">
+  <h2>Danh sách sản phẩm</h2>
+  <p>Đây là trang hiển thị toàn bộ sản phẩm</p>
+</div>
+<a href="#!/product/add">
+  <button class="btn border-1 bg-primary text-light mb-2">Thêm sản phẩm</button>
+</a>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Giá</th>
+        <th scope="col">Tiêu đề</th>
+        <th scope="col">Mô tả</th>
+        <th scope="col">Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in products">
+        <th scope="row">{{$index+1}}</th>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.desc}}</td>
+        <td>
+          <button class="btn btn-warning" ng-click="onEdit(p.id)">Sửa</button>
+          <button class="btn btn-danger" ng-click="onDelete(p.id)">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

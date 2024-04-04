@@ -1,0 +1,30 @@
+<div class="heading-content">
+    <h2>Danh sách sản danh mục sản phẩm</h2>
+    <p>Đây là trang hiển thị toàn bộ danh mục sản phẩm</p>
+  </div>
+  <a href="#!/product/add">
+    <button class="btn border-1 bg-primary text-light mb-2">Thêm danh mục sản phẩm</button>
+  </a>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tên</th>
+          <th scope="col">Tiêu đề</th>
+          <th scope="col">Mô tả</th>
+          <th scope="col">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="c in categories">
+          <th scope="row">{{$index+1}}</th>
+          <td>{{c.name}}</td>
+          <td>{{c.title}}</td>
+          <td>{{c.desc}}</td>
+          <td>
+            <button class="btn btn-warning" ng-click="onEdit(c.id)">Sửa</button>
+            <button class="btn btn-danger" ng-click="onDelete(c.id)">Xóa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>

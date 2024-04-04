@@ -7,13 +7,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.js"></script>
 </head>
+<style>
+  .accordion-item{
+    border: none;
+    outline: none
+  }
+  .accordion-button::after,.accordion-button:not(.collapsed)::after{
+    background-image:none;
+    width: 0;
+    margin: 0;
+  }
+</style>
 <body>
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary p-2">
+    <div class="container-fluid p-0" ng-app="appRoute">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary p-2 fixed-top">
             <div class="container-fluid p-0">
                 <div class="row w-100">
-                    <div class="col-2">
+                    <div class="col-3 d-flex justify-content-between align-items-center">
                         <a class="navbar-brand" href="#">
                             <img src="./assets/img/logo.png" alt="" style="width: 120px;">
                           </a>
@@ -21,7 +34,7 @@
                             <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
                           </svg>
                     </div>
-                    <div class="col-9">
+                    <div class="col-8 d-flex justify-content-between align-items-center">
                         <div class="collapse navbar-collapse position-relative" id="navbarSupportedContent">
                                 <i class="fa-solid fa-magnifying-glass position-absolute ms-3 fw-bold text-body-tertiary"></i>
                                 <input class="form-control me-2 rounded-0 w-75 ps-5" type="search" placeholder="Search something special" aria-label="Search">
@@ -30,21 +43,24 @@
                     <div class="col-1 d-flex justify-content-between p-3">
                         <i class="fa-solid fa-bell icon" width="20px"></i>
                         <i class="fa-regular fa-envelope icon"></i>
-                        <img src="assets/img/user.png" alt="" width="20px" style="border-radius: 50%;">
+                        <img src="assets/img/user.png" alt="" width="20px" height="20px" style="border-radius: 50%;">
                     </div>
                 </div>
             </div>
           </nav>
-          <div class="main">
+          <div class="ps-2 main mt-5">
             <div class="row w-100">
-                <div class="col-md-3 p-0">
+              <div class="col-md-3 p-0">
+                  <!-- navigation -->
+                  <p class="ps-2 text-primary">Navigation</p>
                   <div class="accordion accordion-flush" id="sidebar">
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#user" aria-expanded="false" aria-controls="user">
-                          Người dùng
+                          <i class="fa-solid fa-gauge pe-2"></i> Dashboard
+                          <i class="fa-solid fa-chevron-left text-end ms-auto"></i>
                         </button>
-                      </h2>
+                      </h2> 
                       <div id="user" class="accordion-collapse collapse" data-bs-parent="#sidebar">
                         <ul class="list-group">
                           <li class="list-group-item"><a href="" class="text-decoration-none">Danh sách người dùng</a></li>
@@ -54,38 +70,107 @@
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                          Accordion Item #2
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          <i class="fa-solid fa-gear me-2"></i> Widleds
                         </button>
                       </h2>
-                      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#sidebar">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#sidebar">
+                        <div class="accordion-body">This is widleds</div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                          Accordion Item #3
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          <i class="fa-solid fa-envelope me-2"></i> Mailbox
                         </button>
                       </h2>
-                      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#sidebar">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#sidebar">
+                        <div class="accordion-body">This is Mailbox</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- component -->
+                  <p class="ps-2 text-primary">Component</p>
+                  <div class="accordion accordion-flush" id="sidebar">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#elements" aria-expanded="false" aria-controls="elements">
+                          <i class="fa-brands fa-elementor me-2"></i> Elements
+                          <i class="fa-solid fa-chevron-left text-end ms-auto"></i>
+                        </button>
+                      </h2> 
+                      <div id="elements" class="accordion-collapse collapse" data-bs-parent="#sidebar">
+                        <ul class="list-group">
+                          <li class="list-group-item"><a href="" class="text-decoration-none">Danh sách người dùng</a></li>
+                          <li class="list-group-item"><a href="" class="text-decoration-none">Người dùng đã bị xóa</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#miscelianeous" aria-expanded="false" aria-controls="miscelianeous">
+                          <i class="fa-solid fa-flask me-2"></i> Miscellianeous
+                          <i class="fa-solid fa-chevron-left text-end ms-auto"></i>
+                        </button>
+                      </h2>
+                      <div id="miscelianeous" class="accordion-collapse collapse" data-bs-parent="#sidebar">
+                        <div class="accordion-body">This is Miscellianeous</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#form" aria-expanded="false" aria-controls="form">
+                          <i class="fa-solid fa-table me-2"></i> Form
+                          <i class="fa-solid fa-chevron-left text-end ms-auto"></i>
+                        </button>
+                      </h2>
+                      <div id="form" class="accordion-collapse collapse" data-bs-parent="#sidebar">
+                        <div class="accordion-body">This is form</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chart" aria-expanded="false" aria-controls="chart">
+                          <i class="fa-solid fa-cube me-2"></i> Chart
+                          <i class="fa-solid fa-chevron-left text-end ms-auto"></i>
+                        </button>
+                      </h2>
+                      <div id="chart" class="accordion-collapse collapse" data-bs-parent="#sidebar">
+                        <div class="accordion-body">This is chart</div>
+                      </div>
+                    </div>
+                      <!--The place for add, edit,delete  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#table" aria-expanded="false" aria-controls="table">
+                          <i class="fa-solid fa-table me-2"></i> Table
+                          <i class="fa-solid fa-chevron-left text-end ms-auto"></i>
+                        </button>
+                      </h2>
+                      <div id="table" class="accordion-collapse collapse" data-bs-parent="#sidebar">
+                          <ul class="list-group">
+                            <li class="list-group-item"><a href="#!/product/list" class="text-decoration-none">Danh sách sản phẩm</a></li>
+                            <li class="list-group-item"><a href="#!/category/list" class="text-decoration-none">Danh sách danh mục</a></li>
+                          </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-9 p-0">
-                    <div class="content2">
-                      <div class="test me-auto">oop</div>
-                    </div>
+                <!-- table -->
+                <div class="col-md-9 p-0 bg-secondary-subtle vh-100 p-5">
+                  <div ng-view></div>
                 </div>
             </div>
-              
           </div>
     </div>
     <!--Main Navigation-->
   <!--Main layout-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/main.js"></script>
+  <script src="./route/route.js"></script>
+  <script src="./controller/ListProductController.js"></script>
+  <script src="./controller/AddProductController.js"></script>
+  <script src="./controller/EditProductController.js"></script>
+  <script src="./controller/ListCategoryController.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/main.js"></script>
 </body>
 </html>

@@ -3,22 +3,38 @@
     {
       "id": "1",
       "name": "anhlv1",
-      "price": 1000000
+      "price": 1000000,
+      "title": "Máy cũ đẹp 99%",
+      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
     },
     {
       "name": "Viet Anh",
       "price": 1000000,
-      "id": "2"
+      "id": "2",
+      "title": "Máy cũ đẹp 99%",
+      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
     },
     {
       "id": "3",
       "name": "anhlv1",
-      "price": 1000000
+      "price": 1000000,
+      "title": "Máy cũ đẹp 99%",
+      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
     },
     {
-      "id": "7d18",
-      "name": "Lê Việt Anh",
-      "price": "300000"
+      "id": "37b0",
+      "name": "Viet Anh",
+      "price": "28000000",
+      "title": "top",
+      "desc": "hay"
+    }
+  ],
+  "category": [
+    {
+      "id": "1",
+      "name": "anhlv1",
+      "title": "Máy cũ đẹp 99%",
+      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
     }
   ]
 }

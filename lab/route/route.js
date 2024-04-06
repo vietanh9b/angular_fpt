@@ -17,6 +17,14 @@ angular.module('appRoute',['ngRoute']).config(function($routeProvider){
         templateUrl: 'views/listCategory.html',
         controller:ListCategoryController
     })
+    .when('/category/add',{ // định nghĩa tên router
+        templateUrl: 'views/addCategory.html',
+        controller:AddCategoryController
+    })
+    .when('/category/edit/:id',{ // định nghĩa tên router
+        templateUrl: 'views/editCategory.html',
+        controller:EditCategoryController
+    })
 })
 
 // 3) Bảng danh mục -> Category

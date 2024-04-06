@@ -1,30 +1,16 @@
-window.EditProductController=function($scope,$http,$location,$routeParams){
+window.EditCategoryController=function($scope,$http,$location,$routeParams){
     const apiUrl="http://localhost:3000/product"
     const apiCate="http://localhost:3000/category"
     const id=$routeParams.id
-
-    $scope.getAllCategory = function(){
-        $http.get(`${apiCate}`).then(res=>{
-            if(res.status==200){
-                $scope.categories=res.data
-            }
-        }).catch(error=>{
-            $scope.message=`${error.statusText} product with id ${id}`
-        })
-    }
-
-    $scope.getAllCategory()
-
-    $scope.getProductInfo = function(){
-        $http.get(`${apiUrl}/${id}`).then(res=>{
+    console.log(1);
+    $scope.getCategoryInfo = function(){
+        $http.get(`${apiCate}/${id}`).then(res=>{
             if(res.status==200){
                 $scope.product=res.data
                 // console.log($scope.product);
                 $scope.inputValue={
                     name: res.data.name,
-                    price: res.data.price,
                     title: res.data.title,
-                    cate: res.data.cate,
                     desc: res.data.desc
                 }
             }
@@ -35,9 +21,7 @@ window.EditProductController=function($scope,$http,$location,$routeParams){
 
     $scope.checkData={
         name:false,
-        price:false,
         title:false,
-        cate:false,
         desc:false
     }
     $scope.onEditForm=function(){
@@ -49,13 +33,6 @@ window.EditProductController=function($scope,$http,$location,$routeParams){
             // nếu không nhập vào inputValue hoặc inputValue.name 
             //thì lập tức chuyển thành true
             $scope.checkData.name=true
-            flag=true
-        }
-
-        if(!$scope.inputValue.price || !$scope.inputValue){
-            // nếu không nhập vào inputValue hoặc inputValue.price 
-            //thì lập tức chuyển thành true
-            $scope.checkData.price=true
             flag=true
         }
 
@@ -78,15 +55,13 @@ window.EditProductController=function($scope,$http,$location,$routeParams){
                 ...$scope.inputValue
             }
             // khi thêm dữ liệu sử dụng phương thức post
-            $http.put(`${apiUrl}/${id}`,uploadItem).then(res=>{
-                console.log(res);
+            $http.put(`${apiCate}/${id}`,uploadItem).then(res=>{
                 if(res.status==200){
-                console.log(2);
-                    $location.path('/product/list')
+                    $location.path('/category/list')
                 }
             })
         }
     }
 
-    $scope.getProductInfo()
+    $scope.getCategoryInfo()
 }

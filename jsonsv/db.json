@@ -1,40 +1,68 @@
 {
   "product": [
     {
-      "id": "1",
       "name": "anhlv1",
       "price": 1000000,
       "title": "Máy cũ đẹp 99%",
-      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
+      "cate": "1",
+      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới.",
+      "id": "1"
     },
     {
       "name": "Viet Anh",
       "price": 1000000,
-      "id": "2",
       "title": "Máy cũ đẹp 99%",
-      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
+      "cate": "1",
+      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện",
+      "id": "2"
     },
     {
-      "id": "3",
       "name": "anhlv1",
       "price": 1000000,
       "title": "Máy cũ đẹp 99%",
-      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
+      "cate": "bf29",
+      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới",
+      "id": "3"
     },
     {
-      "id": "37b0",
       "name": "Viet Anh",
       "price": "28000000",
-      "title": "top",
-      "desc": "hay"
+      "title": "top hat",
+      "cate": "bf29",
+      "desc": "hay",
+      "id": "37b0"
     }
   ],
   "category": [
     {
       "id": "1",
-      "name": "anhlv1",
+      "name": "Iphone 5",
       "title": "Máy cũ đẹp 99%",
-      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
+      "desc": "Ngon"
+    },
+    {
+      "id": "2",
+      "name": "Iphone 6",
+      "title": "Máy cũ đẹp 98%",
+      "desc": "Ngon rẻ"
+    },
+    {
+      "id": "3",
+      "name": "Iphone X",
+      "title": "LikeNew",
+      "desc": "Đẹp"
+    },
+    {
+      "id": "4",
+      "name": "Iphone XS Max",
+      "title": "LikeNew",
+      "desc": "Đẹp"
+    },
+    {
+      "id": "bf29",
+      "name": "samsung 1",
+      "title": "hay quá em ơi",
+      "desc": "goodđ"
     }
   ]
 }

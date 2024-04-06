@@ -17,20 +17,12 @@
       "id": "2"
     },
     {
-      "name": "anhlv1",
-      "price": 1000000,
-      "title": "Máy cũ đẹp 99%",
-      "cate": "bf29",
-      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới",
-      "id": "3"
-    },
-    {
-      "name": "Viet Anh",
+      "id": "903b",
+      "name": "điều hòa",
       "price": "28000000",
-      "title": "top hat",
-      "cate": "bf29",
-      "desc": "hay",
-      "id": "37b0"
+      "title": "tốt",
+      "cate": "da8c",
+      "desc": "hay"
     }
   ],
   "category": [
@@ -63,6 +55,12 @@
       "name": "samsung 1",
       "title": "hay quá em ơi",
       "desc": "goodđ"
+    },
+    {
+      "id": "da8c",
+      "name": "samsung 2",
+      "title": "tốt",
+      "desc": "Máy cũ nguyên bản, chưa sửa chữa hình thức đẹp 99% như mới. Cam kết không bán hàng thay vỏ, ép kính. Máy trần chưa phụ kiện"
     }
   ]
 }

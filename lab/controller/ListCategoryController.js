@@ -15,19 +15,19 @@ window.ListCategoryController=function($scope,$http,$location){
     $scope.onDelete=function(deleteId){
         let confirm=window.confirm('Bạn có muốn xóa không (nếu xóa thì các sản phẩm có chứa danh mục này sẽ mất)?')
         if(confirm){
-            // $http.delete(`${apiUrl}/${deleteId}`)
-            $http.delete(`${apiPro}?cate=${deleteId}`).then(response => {
-                // Kiểm tra phản hồi từ server
-                if (response.status === 200) {
-                    // Nếu yêu cầu thành công, cập nhật danh sách categories hoặc thực hiện các hành động khác
-                    console.log("Xóa thành công");
-                } else {
-                    // Nếu yêu cầu không thành công, xử lý lỗi
-                    console.error("Xóa không thành công");
-                }
+            $http.delete(`${apiUrl}/${deleteId}`)
+            $http.get(`${apiPro}?cate=${deleteId}`).then(response => {
+                // Lặp qua từng sản phẩm trong mảng
+                response.data.forEach(product => {
+                    // Gửi yêu cầu DELETE để xóa sản phẩm này
+                    $http.delete(`${apiPro}/${product.id}`).then(response => {
+                        console.log(`Đã xóa sản phẩm có id ${product.id}`);
+                    }).catch(error => {
+                        console.error(`Lỗi khi xóa sản phẩm có id ${product.id}:`, error);
+                    });
+                });
             }).catch(error => {
-                // Xử lý lỗi nếu có
-                console.error("Lỗi khi gửi yêu cầu DELETE:", error);
+                console.error("Lỗi khi lấy danh sách sản phẩm:", error);
             });
             
             // .then(res=>{

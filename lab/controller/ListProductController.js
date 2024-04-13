@@ -7,6 +7,8 @@ window.ListProductController=function($scope,$http,$location){
                 $scope.products=res.data
                 // console.log($scope.products);
             }
+
+            
         })
     }
     $scope.getProducts() //thực thi hàm

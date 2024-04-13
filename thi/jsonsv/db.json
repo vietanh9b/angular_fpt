@@ -1,0 +1,11 @@
+{
+    "product": [
+      {
+        "id": "1",
+        "ma_sp": "Ma01",
+        "ten": "Áo polo",
+        "loai": "Đồ nam",
+        "gia": 20000
+      }
+    ]
+}

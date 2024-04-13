@@ -1,0 +1,10 @@
+angular.module('myApp',['ngRoute']).config($routeProvider=>{
+    $routeProvider.when('/list-product',{
+        templateUrl:'views/list.html',
+        controller:ListController
+    })
+    .when('/products/add',{
+        templateUrl:'views/add.html',
+        controller:AddController
+    })
+})

@@ -1,0 +1,28 @@
+<div class="title bg-light p-3 fs-4 border border-bottom-0">Danh sách sản phẩm</div>
+<div class="content text-end border">
+    <a href="#!/products/add">
+        <button class="btn bg-success text-light mt-2 mb-2 me-2">+ Thêm sản phẩm</button>
+    </a>
+    <table class="table text-start">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Tên sản phẩm</th>
+            <th scope="col">Loại</th>
+            <th scope="col">Giá</th>
+            <th scope="col">Thao tác</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="p in products">
+                <th scope="col">{{$index+1}}</th>
+                <td>{{p.ten}}</td>
+                <td>{{p.loai}}</td>
+                <td>{{p.gia}}</td>
+                <td>
+                    <a href="#!/products/delete:id"></a>
+                    <button class="btn bg-danger text-light">Xóa</button>
+                    <button class="btn bg-primary text-light">Sửa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/bootstrap.css">
+    <script src="./libs/angular.min.js"></script>
+    <script src="./libs/angular-route.js"></script>
+</head>
+<body>
+    <div class="container-fluid p-0" ng-app="myApp">
+        <div class="navbar bg-warning mb-5">
+            <div class="container-fluid">
+                <div class="title text-primary">Trang chủ</div>
+                <form action="" class="d-flex">
+                    <input type="text" class="form-control me-2" placeholder="Search">
+                    <button class="btn btn-outline-success">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="container" ng-view>
+        </div>
+    </div>
+    <script src="route/route.js"></script>
+    <script src="controllers/ListController.js"></script>
+    <script src="controllers/AddController.js"></script>
+    <script src="controllers/EditController.js"></script>
+    <script src="libs/bootstrap.js"></script>
+</body>
+</html>

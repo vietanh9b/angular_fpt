@@ -1,0 +1,31 @@
+<div class="title bg-light p-3 fs-4 border border-bottom-0">Thêm sản phẩm</div>
+<div class="content border">
+    <div class="container">
+        <form>
+            <div class="mb-3">
+              <label for="ma_sp" class="form-label">Mã sản phẩm</label>
+              <input type="text" class="form-control" id="ma_sp" aria-describedby="emailHelp" ng-model="inputValue.ma_sp">
+              <div class="form-text text-danger" ng-if="checkValue.ma_sp">Phải nhập mã sản phẩm</div>
+            </div>
+            <div class="mb-3">
+                <label for="ten_sp" class="form-label">Tên sản phẩm</label>
+                <input type="text" class="form-control" id="ten_sp" aria-describedby="emailHelp" ng-model="inputValue.ten">
+                <div class="form-text text-danger" ng-if="checkValue.ten_sp">Phải nhập tên sản phẩm</div>
+              </div>
+              <div class="mb-3">
+                <label for="ma_sp" class="form-label">Loại sản phẩm</label>
+                <select name="" id="" ng-model="inputValue.loai">
+                    <option value="1">Đồ nam</option>
+                    <option value="2">Đồ nữ</option>
+                </select>
+                <div class="form-text text-danger" ng-if="checkValue.loai_sp">Phải chọn loại sản phẩm</div>
+              </div>
+              <div class="mb-3">
+                <label for="gia_sp" class="form-label">Giá sản phẩm</label>
+                <input type="text" class="form-control" id="gia_sp" aria-describedby="emailHelp" ng-model="inputValue.gia">
+                <div class="form-text text-danger" ng-if="checkValue.gia_sp">Phải nhập giá sản phẩm</div>
+              </div>
+            <button type="submit" class="btn btn-primary" ng-click="onSubmit()">Submit</button>
+          </form>
+    </div>
+</div>

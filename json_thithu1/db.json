@@ -1,0 +1,53 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "ma_sp": "Ma01",
+      "ten": "Áo polo",
+      "loai": "Đồ nam",
+      "gia": 20000
+    },
+    {
+      "id": "2",
+      "ma_sp": "Ma02",
+      "ten": "Áo croptop",
+      "loai": "Đồ nữ",
+      "gia": 100000
+    },
+    {
+      "id": "ad95",
+      "ma_sp": "sp_03",
+      "ten_sp": "quần tây",
+      "loai_sp": "1",
+      "gia_sp": "2000000"
+    },
+    {
+      "id": "f4e8",
+      "ma_sp": "sp_04",
+      "ten": "quần trung quốc",
+      "loai": "1",
+      "gia": "2000000"
+    },
+    {
+      "id": "98a5",
+      "ma_sp": "sp_05",
+      "ten": "quần trung quốc 1",
+      "loai": "1",
+      "gia": "2000001"
+    },
+    {
+      "id": "c4e6",
+      "ma_sp": "sp_06",
+      "ten": "quần trung quốc 2",
+      "loai": "1",
+      "gia": "2000001"
+    },
+    {
+      "id": "ae33",
+      "ma_sp": "sp_07",
+      "ten": "quần trung quốc 3",
+      "loai": "Đồ nam",
+      "gia": "2000000"
+    }
+  ]
+}
